@@ -23,10 +23,13 @@ block = raw_input("What IP address would you like to block?")
 config_set = ['object-group network THE_BAD_GUYS2', 'network-object host {block}', 'end']
 
 for asa in (asas1, asa2):
+    with ConnectHandler(**asa) as m:
+        m.enable()
+        m.config_mode()
+        m.send_config_set(config_set, True)
+        m.send_command_expect('wr')
 
-net_connect = ConnectHandler(**asa)
-output = net_connect.send_command_expect('show ip')
-print output
+print asa
 
 net_connect.disconnect()
 
