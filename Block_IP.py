@@ -18,7 +18,7 @@ asa2 = {
     'port': 22,
 }
 
-block = raw_input("What IP address would you like to block?")
+block = raw_input("What IP address would you like to block? ")
 
 config_set = ['object-group network THE_BAD_GUYS2', 'network-object host {block}'.format(**locals()), 'end']
 
@@ -28,8 +28,7 @@ for asa in (asas1, asa2):
         device.config_mode()
         device.send_config_set(config_set, True)
         device.send_command_expect('wr')
+        device.send_command_expect('logout')
     print asa
-
-net_connect.disconnect()
-
+    
 i = input("Press Enter to exit")
