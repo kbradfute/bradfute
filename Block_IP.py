@@ -20,16 +20,15 @@ asa2 = {
 
 block = raw_input("What IP address would you like to block?")
 
-config_set = ['object-group network THE_BAD_GUYS2', 'network-object host {block}', 'end']
+config_set = ['object-group network THE_BAD_GUYS2', 'network-object host {block}'.format(**locals()), 'end']
 
 for asa in (asas1, asa2):
-    with ConnectHandler(**asa) as m:
-        m.enable()
-        m.config_mode()
-        m.send_config_set(config_set, True)
-        m.send_command_expect('wr')
-
-print asa
+    with ConnectHandler(**asa) as device:
+        device.enable()
+        device.config_mode()
+        device.send_config_set(config_set, True)
+        device.send_command_expect('wr')
+    print asa
 
 net_connect.disconnect()
 
