@@ -12,4 +12,4 @@ def HeightFtInToCm(heightFt,heightIn):
 heightFt = input("How tall are you in feet?: ")
 heightIn = input("How tall are you in inches?: ")
 
-print("You are",heightCm," centimeters tall!")
+print("You are",heightCm,"centimeters tall!")
