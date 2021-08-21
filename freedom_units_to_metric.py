@@ -12,4 +12,4 @@ heightFt = input("How tall are you in feet?: ")
 heightIn = input("How tall are you in inches?: ")
 heightCm = HeightFtInToCm(heightFt,heightIn)
 
-print("You are",heightCm,"cm tall!")
+print("You are",round(heightCm,2),"cm tall!")
