@@ -1,15 +1,15 @@
-cmPerInch = 2.54
-inchesPerFeet = 12
+cmPerInch = (2.54)
+inchesPerFeet = (12)
 
 def HeightFtInToCm(heightFt,heightIn):
-    float.cmPerInch
-    int.inchesPerFeet()
-    int.totalInches()
-    totalInches = (heightFt * inchesPerFeet) + heightIn
+    intHeightFt = int(heightFt)
+    intHeightIn = int(heightIn)
+    totalInches = (intHeightFt * inchesPerFeet) + intHeightIn
     heightCm = totalInches * cmPerInch
     return heightCm
 
 heightFt = input("How tall are you in feet?: ")
 heightIn = input("How tall are you in inches?: ")
+heightCm = HeightFtInToCm(heightFt,heightIn)
 
-print("You are",heightCm,"centimeters tall!")
+print("You are",heightCm,"cm tall!")
