@@ -1,3 +1,18 @@
+"""
+Scans the network for devices by sending ARP requests to the specified IP or IP range.
+
+Args:
+    ip (str): The target IP address or IP range to scan (e.g., "192.168.1.1/24").
+    
+Returns:
+    list: A list of dictionaries, where each dictionary contains the IP and MAC address
+          of a detected device. Example:
+            [
+                {"ip": "192.168.1.1", "mac": "00:11:22:33:44:55"},
+                {"ip": "192.168.1.2", "mac": "66:77:88:99:AA:BB"}
+            ]
+"""
+
 #!/usr/bin/env python
 
 import scapy.all as scapy
