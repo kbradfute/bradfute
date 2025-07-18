@@ -1,5 +1,3 @@
-
-
 from netmiko import ConnectHandler as ch
 
 cisco = {
